@@ -16,9 +16,9 @@ document.getElementById("sign_in_date").innerText = new Date().toLocaleString();
  * @type {({name: string, id: string}|{name: string, id: string})[]}
  */
 const stu_info = [
-    {id: "19090415", name: "李嘉兴", status: false, time: 0, subject: ""},
-    {id: "19080034", name: "郑健衡", status: false, time: 0, subject: ""},
-    {id: "19030271", name: "陈红名", status: false, time: 0, subject: ""},
+    {id: "19090415", name: "ljx", status: false, time: 0, subject: ""},
+    {id: "19080034", name: "zjh", status: false, time: 0, subject: ""},
+    {id: "19030271", name: "chm", status: false, time: 0, subject: ""},
 ];
 
 let seatingChartList = [
