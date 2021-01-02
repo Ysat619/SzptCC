@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/icon.css">
+</head>
+<body>
+
+<div class="index_main_wrap">
+
+    <!-- 顶部容器 -->
+    <div class="index_head_wrap">
+
+    </div>
+
+    <!-- 内容容器 -->
+    <div class="user_content_wrap">
+        <div class="user_spare_wrap"></div>
+        <div class="user_main_wrap">
+            <div class="user_title_wrap">
+                <div class="user_title_text">
+                    个人信息
+                </div>
+            </div>
+            <div class="user_info_table">
+                <table cellspacing="0">
+                    <tr>
+                        <td class="strong">学号</td>
+                        <td>19090415</td>
+                    </tr>
+                    <tr>
+                        <td class="strong">姓名</td>
+                        <td>李嘉兴</td>
+                    </tr>
+                    <tr>
+                        <td class="strong">密码</td>
+                        <td>
+                            <div class="edit link" onclick="show_user_edit()">修改</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="strong">电话</td>
+                        <td>13286667356</td>
+                    </tr>
+                    <tr>
+                        <td class="strong">邮箱</td>
+                        <td>893957231@qq.com</td>
+                    </tr>
+                    <tr>
+                        <td class="strong">备注</td>
+                        <td>网页设计期末大作业</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="edit link" onclick="show_user_edit()">编辑</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="user_edit_wrap">
+                <div class="user_edit_table">
+                    <table cellspacing="0">
+                        <tr>
+                            <td class="strong">学号</td>
+                            <td>19090415</td>
+                        </tr>
+                        <tr>
+                            <td class="strong">姓名</td>
+                            <td>李嘉兴</td>
+                        </tr>
+                        <tr>
+                            <td class="strong">密码</td>
+                            <td>
+                                <div class="modify_pwd_wrap">
+                                    <label>
+                                        <input class="radio" type="radio" name="checkPwd" checked>
+                                        修改登录名为"姓名+学号后4位"时的登录密码:
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input class="radio" type="radio" name="checkPwd">
+                                        修改登录名为"学号"时的登录密码:
+                                    </label>
+                                    <div class="modify_pwd_old">
+                                        <div class="modify_pwd_old_label">旧密码</div>
+                                        <input class="form_theme" type="text">
+
+                                    </div>
+                                    <div class="modify_pwd_new">
+                                        <div class="modify_pwd_new_label">新密码</div>
+                                        <input class="form_theme" type="text">
+
+                                    </div>
+                                    <div class="modify_pwd_new_confirm">
+                                        <div class="modify_pwd_new_confirm_label">确认新密码</div>
+                                        <input class="form_theme" type="text">
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="strong">电话</td>
+                            <td><input class="form_theme" type="text" value="13286667356"></td>
+                        </tr>
+                        <tr>
+                            <td class="strong">邮箱</td>
+                            <td><input class="form_theme" type="text" value="893957231@qq.com"></td>
+                        </tr>
+                        <tr>
+                            <td class="strong">备注</td>
+                            <td><input class="form_theme" type="text" value="网页设计期末大作业"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="submit_wrap">
+                                    <button class="form_theme btn" id="btn_user_submit" onclick="handleUserEditSubmit()">提交</button>
+                                    <button class="form_theme btn" id="btn_user_cancel" onclick="handleUserEditCancel()">取消</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="user_edit_tips">
+                    *为提高登录的安全性，请及时修改您的登录密码
+                </div>
+            </div>
+
+
+        </div>
+        <div class="user_spare_wrap"></div>
+    </div>
+
+    <!-- 底部容器 -->
+    <div id="footer"></div>
+
+</div>
+<script src="js/core.js"></script>
+</body>
+</html>

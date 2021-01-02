@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>学生的功能列表</title>
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/icon.css">
+</head>
+<body>
+
+<div class="index_main_wrap">
+
+    <!-- 顶部容器 -->
+    <div class="index_head_wrap"></div>
+
+    <!-- 内容容器 -->
+    <div class="stu_func_content_wrap">
+        <div class="stu_func_spare_wrap"></div>
+        <!-- 主内容 -->
+        <div class="stu_func_main_wrap">
+            <div class="stu_func_list_wrap">
+                <div class="stu_func_list_row">
+                    <div class="stu_func_wrap" onclick="handleStuFunction(0)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-wangpan"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">CC网盘</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">课件下载,作业上传,课程其他资源下载</div>
+                        </div>
+                    </div>
+                    <div class="stu_func_wrap" onclick="handleStuFunction(1)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-qiandao"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">签到考勤</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">前往签到页面完成签到</div>
+                        </div>
+                    </div>
+                    <div class="stu_func_wrap" onclick="handleStuFunction(2)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-chaxun"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">考勤查询</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">查询本学期的考勤记录</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stu_func_list_row">
+                    <div class="stu_func_wrap" onclick="handleStuFunction(3)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-kaoshi"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">考试上传</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">提交考试结果文件</div>
+                        </div>
+                    </div>
+                    <div class="stu_func_wrap" onclick="handleStuFunction(4)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-icon-test"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">共享文件</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">下载教师共享的文件</div>
+                        </div>
+                    </div>
+                    <div class="stu_func_wrap" onclick="handleStuFunction(5)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-xiazai_huaban"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">软件下载</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">下载教学常用软件</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stu_func_list_row">
+                    <div class="stu_func_wrap" onclick="handleStuFunction(6)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-shezhi-"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">个人设定</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">密码修改,个人信息设置</div>
+                        </div>
+                    </div>
+                    <div class="stu_func_wrap" onclick="handleStuFunction(7)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-biaoqiankuozhan_jilu-378"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">登录记录</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">查询登录记录</div>
+                        </div>
+                    </div>
+                    <div class="stu_func_wrap" onclick="handleStuFunction(8)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-denglu"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">退出账户</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">退出当前账户</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stu_func_list_row">
+                    <div class="stu_func_wrap" onclick="handleStuFunction(9)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-jingqingqidai"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">更多功能</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">敬请期待</div>
+                        </div>
+                    </div>
+                    <div class="stu_func_wrap" onclick="handleStuFunction(10)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-jingqingqidai"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">更多功能</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">敬请期待</div>
+                        </div>
+                    </div>
+                    <div class="stu_func_wrap" onclick="handleStuFunction(11)">
+                        <!--学生功能的图标-->
+                        <div class="stu_func_icon">
+                            <span class="iconfont icon-jingqingqidai"></span>
+                        </div>
+                        <div class="stu_func_text">
+                            <!-- 学生功能的标题 -->
+                            <div class="stu_func_title">更多功能</div>
+                            <!-- 学生功能的描述 -->
+                            <div class="stu_func_describe">敬请期待</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stu_func_spare_wrap"></div>
+    </div>
+
+    <!-- 底部容器 -->
+    <div id="footer"></div>
+
+</div>
+<script src="js/core.js"></script>
+<script src="js/jquery.min.js"></script>
+</body>
+</html>

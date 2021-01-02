@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录 - CC网 - CC教学辅助平台</title>
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/icon.css">
+
+</head>
+<body>
+
+<div class="index_main_wrap">
+
+    <!-- 顶部容器 -->
+    <div class="index_head_wrap"></div>
+
+    <!-- 内容容器 -->
+    <div class="index_content_wrap">
+        <!--登录-->
+        <div class="login_wrap">
+            <p>账号登录</p>
+            <div class="user_label">用户名：</div>
+            <div class="div_user">
+                <span class="iconfont icon-xingmingyonghumingnicheng"></span>
+                <input class="form_theme" id="username" name="username" placeholder="请输入学号" type="text">
+            </div>
+            <div class="user_label">密码：</div>
+            <div class="div_user">
+                <span class="iconfont icon-mima"></span>
+                <input class="form_theme" id="password" onkeyup="handleLoginEnter(event)" name="password" placeholder="请输入密码" type="password">
+                <span class="iconfont icon-icon" onclick="handlePopup()">
+                    <span class="popup_text" id="popup">用户名为姓名+学号后4位,密码默认为学号，登录后请修改。</span>
+                </span>
+            </div>
+
+            <div class="login_option">
+                <label>
+                    <input type="checkbox" class="cb">
+                    记住我
+                </label>
+                <a href="https://www.szpt.edu.cn/" class="link">无法登录?</a>
+            </div>
+
+            <button class="form_theme btn" onclick="handleLogin()"><span class="iconfont icon-denglu"></span>登录</button>
+
+            <!--底部提示-->
+            <div class="tips_wrap">
+                <div>* 网页显示不完全时，按下Ctrl键，同时<br>滚动鼠标，也可实现网页放大缩小(最佳<br>分辨率1280×800以上)</div>
+                <div>* <a href="#" class="link">移动版</a></div>
+            </div>
+        </div>
+
+        <div class="content_right_wrap">
+            <img src="img/index_img.png" alt="img">
+        </div>
+
+    </div>
+
+    <!-- 底部容器 -->
+    <div id="footer">
+        <div class="bottom_wrap">Copyright ©
+            <a href="https://www.szpt.edu.cn/" class="link">深圳职业技术学院&nbsp;</a>
+            Power by 20软件3李嘉兴
+        </div>
+    </div>
+
+</div>
+<script src="js/core.js"></script>
+</body>
+</html>

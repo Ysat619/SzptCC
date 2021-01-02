@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>网盘列表</title>
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="index_main_wrap">
+
+    <!-- 顶部容器 -->
+    <div class="index_head_wrap"></div>
+
+    <!-- 内容容器 -->
+    <div class="disk_content_wrap">
+        <div class="disk_spare_wrap"></div>
+        <div class="disk_spare_wrap"></div>
+        <!-- 左侧课程列表 -->
+        <div class="disk_left_class_wrap">
+            <div class="disk_left_title">
+                <span class="iconfont icon-xuanze"></span>
+                选择课程
+            </div>
+            <div class="disk_classes_wrap">
+                <div class="disk_class active1" onclick="handleChooseClass(0)" data-index="0"><span class="iconfont icon-kecheng"></span>Java程序设计基础--20软件3
+                    --秦高德老师</div>
+                <div class="disk_class" data-index="1" onclick="handleChooseClass(1)"><span class="iconfont icon-kecheng"></span>人工智能引论--20软件3
+                    --李云程老师</div>
+                <div class="disk_class" data-index="2" onclick="handleChooseClass(2)"><span class="iconfont icon-kecheng"></span>网页设计与制作技术--20软件3
+                    --肖乐萍老师</div>
+            </div>
+        </div>
+        <!--- 右侧网盘主内容 -->
+        <div class="disk_right_content_wrap">
+
+            <div class="tool_wrap">
+                <div class="tool_option_wrap iconfont icon-tubiaolunkuohua_caidan"></div>
+                <div class="tool_search_wrap">
+                    <input class="form_theme" type="text" placeholder="输入关键词">
+                    <span class="tool_search_icon iconfont icon-sousuo"></span>
+                </div>
+            </div>
+
+            <div class="disk_title_wrap">
+                <div class="disk_title_left_wrap">
+                    <div class="title_text">
+                        全部文件
+                    </div>
+                    <span class="title_module">···</span>
+                </div>
+
+                <div class="disk_title_right_wrap">
+
+                    <button class="disk_title_btn form_theme">
+                        <span class="iconfont icon-xiangqing"></span>
+                        课程信息
+                    </button>
+
+                    <button class="disk_title_btn form_theme">
+                        <input type="file" webkitdirectory multiple>
+                        <span class="iconfont icon-wenjianjia"></span>
+                        文件夹
+                    </button>
+                    <button class="disk_title_upload_btn form_theme">
+                        <input type="file">
+                        <span class="iconfont icon-shangchuan"></span>
+                        上传
+                    </button>
+                    <button class="disk_title_upload_btn form_theme">
+                        <span class="iconfont icon-xiazai_huaban"></span>
+                        下载
+                    </button>
+                </div>
+            </div>
+
+            <div class="disk_list_wrap">
+                <!-- 网盘列表头部工具条 -->
+                <div class="disk_list_head_wrap">
+                    <div class="disk_list_head_toolbar">
+                        <div class="disk_list_head_toolbar_left">
+                            <label>
+                                <input type="checkbox">
+                                共 13 项
+                            </label>
+                        </div>
+                        <div class="disk_list_head_toolbar_right">
+                            <span class="iconfont icon-caidan"></span>
+                            <span class="iconfont icon-paixu"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 网盘列表主体 -->
+                <div class="disk_list_wrap">
+                    <table cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th class="disk_list_head_name">名称</th>
+                            <th class="disk_list_head_size">大小</th>
+                            <th class="disk_list_head_start">开通时间</th>
+                            <th class="disk_list_head_end">关闭时间 <span> ↓</span></th>
+                            <th class="disk_list_head_remark">备注</th>
+                        </tr>
+                        </thead>
+
+                        <tr class="disk_list_row" onclick="handleChooseFile(0)" data-index="0">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-wenjianjia" aria-hidden="true">
+                                    <use xlink:href="#icon-wenjianjia"></use>
+                                </svg>
+                                <span>提交作业区</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">-</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">点击进入文件夹</td>
+                        </tr>
+
+                        <tr class="disk_list_row" onclick="handleChooseFile(1)" data-index="1">
+                            <td class="disk_list_row_cell_filename">
+                                <div>
+                                    <input type="checkbox" class="cb">
+                                    <svg class="iconfont icon-WORD">
+                                        <use xlink:href="#icon-WORD"></use>
+                                    </svg>
+                                    <span>第15周课后作业.doc</span>
+                                </div>
+                            </td>
+                            <td class="disk_list_row_cell_size">5000.0KB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">提交java文件</td>
+                        </tr>
+                        <tr class="disk_list_row" onclick="handleChooseFile(2)" data-index="2">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-WORD" aria-hidden="true">
+                                    <use xlink:href="#icon-WORD"></use>
+                                </svg>
+                                <span>Java期末练习题.docx</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">666.0KB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">提交整个工程目录</td>
+                        </tr>
+                        <tr class="disk_list_row" onclick="handleChooseFile(3)" data-index="3">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-ppt" aria-hidden="true">
+                                    <use xlink:href="#icon-ppt"></use>
+                                </svg>
+                                <span>ch5_课堂ppt.ppt</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">888.8KB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">测试ppt文件</td>
+                        </tr>
+
+                        <tr class="disk_list_row" onclick="handleChooseFile(4)" data-index="4">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-excel" aria-hidden="true">
+                                    <use xlink:href="#icon-excel"></use>
+                                </svg>
+                                <span>测试数据.xlsx</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">8.6MB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">测试excel文件</td>
+                        </tr>
+
+                        <tr class="disk_list_row" onclick="handleChooseFile(5)" data-index="5">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-wenjian-copy" aria-hidden="true">
+                                    <use xlink:href="#icon-wenjian-copy"></use>
+                                </svg>
+                                <span>期末考核.java</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">8.6KB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">测试txt文件</td>
+                        </tr>
+
+                        <tr class="disk_list_row" onclick="handleChooseFile(6)" data-index="6">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-yasuobao" aria-hidden="true">
+                                    <use xlink:href="#icon-yasuobao"></use>
+                                </svg>
+                                <span>java全套资料.rar</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">800.6MB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">测试压缩文件</td>
+                        </tr>
+
+                        <tr class="disk_list_row" onclick="handleChooseFile(7)" data-index="7">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-yasuobao" aria-hidden="true">
+                                    <use xlink:href="#icon-yasuobao"></use>
+                                </svg>
+                                <span>java全套资料.rar</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">800.6MB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">测试滚动条效果</td>
+                        </tr>
+
+                        <tr class="disk_list_row" onclick="handleChooseFile(8)" data-index="8">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-yasuobao" aria-hidden="true">
+                                    <use xlink:href="#icon-yasuobao"></use>
+                                </svg>
+                                <span>java全套资料.rar</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">800.6MB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">测试滚动条效果</td>
+                        </tr>
+
+                        <tr class="disk_list_row" onclick="handleChooseFile(9)" data-index="9">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-yasuobao" aria-hidden="true">
+                                    <use xlink:href="#icon-yasuobao"></use>
+                                </svg>
+                                <span>java全套资料.rar</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">800.6MB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">测试滚动条效果</td>
+                        </tr>
+
+                        <tr class="disk_list_row" onclick="handleChooseFile(10)" data-index="10">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-yasuobao" aria-hidden="true">
+                                    <use xlink:href="#icon-yasuobao"></use>
+                                </svg>
+                                <span>java全套资料.rar</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">800.6MB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">测试滚动条效果</td>
+                        </tr>
+
+                        <tr class="disk_list_row" onclick="handleChooseFile(11)" data-index="11">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-yasuobao" aria-hidden="true">
+                                    <use xlink:href="#icon-yasuobao"></use>
+                                </svg>
+                                <span>java全套资料.rar</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">800.6MB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">测试滚动条效果</td>
+                        </tr>
+
+                        <tr class="disk_list_row" onclick="handleChooseFile(12)" data-index="12">
+                            <td class="disk_list_row_cell_filename">
+                                <input type="checkbox" class="cb">
+                                <svg class="iconfont icon-yasuobao" aria-hidden="true">
+                                    <use xlink:href="#icon-yasuobao"></use>
+                                </svg>
+                                <span>java全套资料.rar</span>
+                            </td>
+                            <td class="disk_list_row_cell_size">800.6MB</td>
+                            <td class="disk_list_row_cell_start">2020-12-16</td>
+                            <td class="disk_list_row_cell_end">2020-12-31</td>
+                            <td class="disk_list_row_cell_remark">测试滚动条效果</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--        <div class="disk_spare_wrap"></div>-->
+    </div>
+
+    <!-- 底部容器 -->
+    <div id="footer"></div>
+
+</div>
+<script src="js/core.js"></script>
+<script src="js/iconfont.js"></script>
+<script src="js/disk.js"></script>
+</body>
+</html>

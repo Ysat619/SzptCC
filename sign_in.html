@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>签到</title>
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/icon.css">
+</head>
+<body>
+
+<div class="index_main_wrap">
+
+    <!-- 顶部容器 -->
+    <div class="index_head_wrap"></div>
+
+    <!-- 内容容器 -->
+    <div class="sign_in_content_wrap">
+        <div class="sign_in_spare_wrap"></div>
+        <div class="sign_in_main_wrap">
+            <!--顶部签到信息-->
+            <div class="sign_in_top_wrap">
+                <div class="sign_in_time_info">
+                    <div class="sign_in_info_semester">
+                        今天是本学期: <span>第16周 星期一</span>
+                    </div>
+                    <div class="sign_in_info_nowTime">
+                        现在时间: <span id="sign_in_date">2020年12月22日12:15:12</span>
+                    </div>
+                </div>
+                <div class="sign_in_class_info">
+                    <div class="sign_in_class_name">20软件3-Java程序设计基础</div>
+                    <div class="sign_in_class_time">已开通签到：<span>第7-8节_15:40-17:05</span></div>
+                    <div class="sign_in_class_tips">本机房内的签到,单机可签1人</div>
+                </div>
+                <div class="sign_in_form_wrap">
+                    <div class="sign_in_form_label">
+                        学号:
+                    </div>
+                    <div class="sign_in_form_input">
+                        <input class="form_theme" id="stu_id" name="stu_id" type="text" onkeyup="handleSignInEnter(event)">
+                    </div>
+                    <div class="sign_in_form_btn">
+                        <button class="form_theme btn" onclick="handleSignIn()">提交</button>
+                    </div>
+                    <div class="sign_in_form_tips">
+                        <span class="iconfont icon-icon" onclick="handlePopup()">
+                        <span class="popup_text" id="popup">输入学号进行签到</span>
+                </span>
+                    </div>
+                </div>
+                <div class="sign_in_success_info">
+                    <span class="iconfont icon-chenggong"></span>李嘉兴(19090415)签到成功!
+                </div>
+            </div>
+            <!-- 座位表 -->
+            <div class="seating_chart_wrap">
+                <!-- 讲台 -->
+                <div class="seating_chart_platform">
+                    <div class="seating_chart_platform_text">
+                        讲台
+                    </div>
+                </div>
+                <div class="seating_chart">
+                    <!-- 过道以左的座位 -->
+                    <div class="seating_chart_left">
+                        <div class="seating_chart_left_row">
+                            <div class="seat_wrap seat_wrap_theme0">
+                                <div class="seat_num">
+                                    --- 10 ---
+                                </div>
+                                <div class="seat_stu_name">
+                                    test10
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap seat_wrap_theme2">
+                                <div class="seat_num">
+                                    9
+                                </div>
+                                <div class="seat_stu_name">
+                                    test9
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap seat_wrap_theme3">
+                                <div class="seat_num">
+                                    8
+                                </div>
+                                <div class="seat_stu_name">
+                                    test8
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap seat_wrap_theme4">
+                                <div class="seat_num">
+                                    7
+                                </div>
+                                <div class="seat_stu_name">
+                                    test7
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap seat_wrap_theme5">
+                                <div class="seat_num">
+                                    6
+                                </div>
+                                <div class="seat_stu_name">
+                                    test6
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seating_chart_left_row">
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    阿布字儿
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seating_chart_left_row">
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    阿布字儿
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seating_chart_left_row">
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    阿布字儿
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seating_chart_left_row">
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    阿布字儿
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--中间过道-->
+                    <div class="seating_chart_middle">
+                        <div class="seating_chart_middle_text">
+                            中<br><br>间<br><br>过<br><br>道
+                        </div>
+                    </div>
+                    <!-- 过道以右的座位 -->
+                    <div class="seating_chart_right">
+                        <div class="seating_chart_right_row">
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    阿布字儿
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seating_chart_right_row">
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    阿布字儿
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seating_chart_right_row">
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    阿布字儿
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seating_chart_right_row">
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    阿布字儿
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seating_chart_right_row">
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    阿布字儿
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                            <div class="seat_wrap">
+                                <div class="seat_num">
+                                    5
+                                </div>
+                                <div class="seat_stu_name">
+                                    test5
+                                </div>
+                                <div class="sign_in_rank">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 底部座位信息 -->
+                <div class="seating_chart_bottom">
+                    <div class="not_sign_in_stu">
+                        还没签到的同学共 5 人：
+                        <span>test1，</span>
+                        <span>test2，</span>
+                        <span>test3，</span>
+                        <span>test4，</span>
+                        <span>test5</span>
+                    </div>
+                    <div class="seat_color_explain">
+                        颜色表示签到时间：
+                        <div class="seat_color_block_wrap">
+                            <span class="seat_color_block seat_color_block0">提前签到</span>
+                            <span class="seat_color_block seat_color_block1">3分钟内</span>
+                            <span class="seat_color_block seat_color_block2">3~5分钟内</span>
+                            <span class="seat_color_block seat_color_block3">6~10分钟内</span>
+                            <span class="seat_color_block seat_color_block4">10分钟后</span>
+                            <span class="seat_color_block seat_color_block5">教师认定</span>
+                        </div>
+                    </div>
+                    <div class="seat_tips">
+                        * 姓名下面的数字代表签到的先后顺序。（<a href="#" class="link">移动版</a>）
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sign_in_spare_wrap"></div>
+    </div>
+
+    <!-- 底部容器 -->
+    <div id="footer"></div>
+
+</div>
+<script src="js/core.js"></script>
+<script src="js/sign_in.js"></script>
+</body>
+</html>
